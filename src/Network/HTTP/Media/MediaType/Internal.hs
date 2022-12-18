@@ -35,7 +35,7 @@ instance Show MediaType where
 
 instance IsString MediaType where
     fromString str = flip fromMaybe (parseAccept $ BS.pack str) $
-        error $ "Invalid media type literal " ++ str
+        error $ "Invalid media type literal \"" ++ str ++ "\""
 
 instance Accept MediaType where
     parseAccept bs = do
